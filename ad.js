@@ -3,7 +3,7 @@ const express = require('express');
 const http = require('http');
 var config = {
     //*
-    url: 'ldap://10.128.0.27:389',
+    url: 'ldap://35.202.89.50:389',
     baseDN: 'CN=Users,DC=TECH,DC=LOCAL',
     username: 'ceadmin',
     password: 'Gapsi123.'

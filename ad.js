@@ -1,4 +1,6 @@
-var ActiveDirectory = require('activedirectory');
+const ActiveDirectory = require('activedirectory');
+const express = require('express');
+const http = require('http');
 var config = {
     //*
     url: 'ldap://10.128.0.27:389',
@@ -37,14 +39,34 @@ ad.authenticate(username, password, function(err, auth) {
 });
 */
 //*
-ad.findUser(sAMAccountName, function(err, user) {
-  if (err) {
-    console.log('ERROR: ' +JSON.stringify(err));
-    return;
-  }
 
-  if (! user) console.log('User: ' + sAMAccountName + ' not found.');
-  else console.log(JSON.stringify(user));
+const app = express();
+const server = http.createServer(app)
+
+
+app.get('/', (req, res) => {
+  // Use req.log (a `pino` instance) to log JSON:
+  ad.findUser(sAMAccountName, function(err, user) {
+    if (err) {
+      console.log('ERROR: ' +JSON.stringify(err));
+      res.send('ERROR: ' +JSON.stringify(err));
+      return;
+    }
+  
+    if (! user) console.log('User: ' + sAMAccountName + ' not found.');
+    else console.log(JSON.stringify(user));
+    res.send(JSON.stringify(user));
+  });
+
 });
+
+
+
 //*/
 
+
+// Listen and serve.
+const PORT = process.env.PORT || 8080;
+server.listen(PORT, () => {
+  console.log(`App started on PORT ${PORT}`);
+});

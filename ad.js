@@ -1,7 +1,7 @@
 var ActiveDirectory = require('activedirectory');
 var config = {
     //*
-    url: 'ldap://34.171.195.139:389',
+    url: 'ldap://10.128.0.27:389',
     baseDN: 'CN=Users,DC=TECH,DC=LOCAL',
     username: 'ceadmin',
     password: 'Gapsi123.'

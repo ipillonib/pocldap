@@ -18,7 +18,7 @@ var config = {
 //filter: '(&(objectcategory=person)(objectclass=user)(|(samaccountname={{username}})(mail={{mail}})))'
 //filter: '(&(objectcategory=*)(|(samaccountname={{username}})))'
 
-var sAMAccountName = 'admin';
+var sAMAccountName = 'ceadmin';
 var ad = new ActiveDirectory(config);
 
 var username = 'appsibm';

@@ -7,13 +7,11 @@ var config = {
     baseDN: 'CN=Users,DC=TECH,DC=LOCAL',
     username: 'ceadmin',
     password: 'Gapsi123.'
-    /*/
-   //*
+    */
     url: 'ldap://consupago.com:389',
     baseDN: 'DC=consupago,DC=com',
     username: 'appsibm',
     password: 'Santafe01$'
-   // */
 };
 //filter: '(&(objectcategory=person)(objectclass=user)(|(samaccountname={{username}})(mail={{mail}})))'
 //filter: '(&(objectcategory=*)(|(samaccountname={{username}})))'

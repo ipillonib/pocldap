@@ -3,7 +3,7 @@ const express = require('express');
 const http = require('http');
 var config = {
 
-    url: 'ldap://consupago.com:389',
+    url: 'ldap://10.29.40.21:389',
     baseDN: 'DC=consupago,DC=com',
     username: 'appsibm',
     password: 'Santafe01$'

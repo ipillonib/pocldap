@@ -3,19 +3,19 @@ const express = require('express');
 const http = require('http');
 var config = {
 
-    url: 'ldap://10.29.40.21:389',
-    baseDN: 'DC=consupago,DC=com',
-    username: 'appsibm',
-    password: 'Santafe01$'
+    url: '',
+    baseDN: '',
+    username: '',
+    password: ''
 };
 //filter: '(&(objectcategory=person)(objectclass=user)(|(samaccountname={{username}})(mail={{mail}})))'
 //filter: '(&(objectcategory=*)(|(samaccountname={{username}})))'
 
-var sAMAccountName = 'appsibm';
+var sAMAccountName = '';
 var ad = new ActiveDirectory(config);
 
-var username = 'appsibm';
-var password = 'Santafe01$';
+var username = '';
+var password = '';
   /*
 ad.authenticate(username, password, function(err, auth) {
   if (err) {
